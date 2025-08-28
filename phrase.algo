@@ -1,0 +1,26 @@
+ALGORITHM phrase
+VAR
+    ch:STRING
+    a,b:INTEGER
+BEGIN
+    REPEAT
+        write("donner une phrase")
+        read("ch")
+    UNTIL (ch[longueur(ch)-1]='.')
+    a:=0
+    b:=0
+    c:=0
+    FOR i FROM 0 TO longueur(ch) STEP 0  DO
+        IF (('A'<=upper(ch[i])<='Z')) THEN
+            a:=a+1
+        ELSE
+            b=b+1
+        END_IF
+        IF ((upper(ch[i])='A'ou upper(ch[i])='E'ou upper(ch[i])='Y'ou upper(ch[i])='U'ou upper(ch[i])='I'ou upper(ch[i])='O')) THEN
+            c:=c+1
+        END_IF
+    END_FOR
+    write("La longueur de la phrase",longueur(ch))
+    write("Le nombre de mots dans la phrase",b)
+    write("Le nombre de voyelles dans la phrase",c)
+END
